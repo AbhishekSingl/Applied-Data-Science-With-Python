@@ -12,9 +12,9 @@ def boxplot(x, y, data, texttype='count'):
     def plot(x, y, **kwargs):
 
         
-        df = pd.DataFrame(dict(Value=x, SalePrice=y))
+        df = pd.DataFrame(dict(Value=x, Target=y))
         df.sort_values(by='Value', inplace=True)
-        ax = sns.boxplot(x='Value', y='SalePrice',data=df)
+        ax = sns.boxplot(x=Value, y=Target,data=df)
         ax.set_xticklabels(ax.get_xticklabels(),rotation=90)
         pos_y = df.Value.value_counts().sort_index().values
         text = [str(i) for i in pos_y]
