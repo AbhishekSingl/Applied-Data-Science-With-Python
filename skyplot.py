@@ -28,10 +28,10 @@ def boxplot(x, y, data, texttype='count', showdatapts=False, includemissing=True
         # Defining text type
         if texttype=='count':
             pos_y = df.Value.value_counts().sort_index().values
-        elif textype=='median':
+        elif texttype=='median':
             pos_y = df.groupby('Value').Target.median().values
-        elif textype=='mean':
-            pos_y = df.groupby('Value').Target.mean().values
+        elif texttype=='mean':
+            pos_y = round(df.groupby('Value').Target.mean().values)
             
         text = [str(i) for i in pos_y]
         pos_x = df.Value.unique()
